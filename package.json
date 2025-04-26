@@ -1,9 +1,7 @@
 {
-  "name": "algorithm",
+  "name": "algorithms",
   "version": "1.0.0",
   "description": "",
-  "main": "basic_search.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "benny": "^3.7.1"
+    "benny": "^3.7.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
   }
 }

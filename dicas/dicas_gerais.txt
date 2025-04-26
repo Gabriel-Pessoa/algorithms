@@ -1,0 +1,13 @@
+Dicas
+
+Capítulo 1
+
+1- O(log n) é mais rápido do que O(n), e O(log n) fica mais ainda mais rápido conforme os elementos da lista aumentam
+2- A rapidez de um algoritmo não é medido em segundos.
+3- O tempo de execução de um algoritmo é medido por meio de seu crescimento.
+4- O tempo de execução dos algoritmos é expresso na notação Big O.
+
+Capítulo 2
+
+1- Array ou Lista encadeadas
+
