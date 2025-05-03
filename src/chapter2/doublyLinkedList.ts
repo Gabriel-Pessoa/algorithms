@@ -37,31 +37,39 @@ class DoublyLinkedList<T> {
         return this._size;
     }
 
-    getElementsInSequence(): string[] {
-        const elements: string[] = [];
-        let currentNode = this._head;
-        elements.push(currentNode.toString());
+    toString(): string {
+        if (this.isEmpty()) return '';
 
-        while (currentNode.next != null) {
+        let objString = this._head.toString();
+        let currentNode = this._head.next;
+
+        for (let i = 1; i < this.getSize() && currentNode != null; i++) {
+            objString = `${objString},${currentNode.toString()}`;
             currentNode = currentNode.next;
-            elements.push(currentNode.toString());
         }
 
-        return elements;
+        return objString;
     }
 
-    print(): void {
-        const elements = this.getElementsInSequence();
+    toStringInverse(): string {
+        if (this.isEmpty()) return '';
 
-        elements.forEach((element, i) => {
-            console.log(`pos: ${i}, elem: ${element}`);
-        });
+        let objString = this._tail.toString();
+        let currentNode = this._tail.previous;
+
+        for (let i = 1; i < this.getSize() && currentNode != null; i++) {
+            objString = `${objString},${currentNode.toString()}`;
+            currentNode = currentNode.previous;
+        }
+
+        return objString;
     }
 }
 
-const listB = new DoublyLinkedList<Number>();
-listB.push(1);
-listB.push(2);
-listB.push(3);
-listB.push(0);
-listB.print();
+// const listB = new DoublyLinkedList<Number>();
+// listB.push(1);
+// listB.push(2);
+// listB.push(3);
+// listB.push(0);
+// console.log(listB.toString());
+// console.log(listB.toStringInverse());

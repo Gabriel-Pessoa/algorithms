@@ -27,7 +27,7 @@ export class LinkedList<T> {
 
             current.next = node;
         }
-        
+
         this._size++;
     }
 
@@ -39,30 +39,23 @@ export class LinkedList<T> {
         return this._size;
     }
 
-    getElementsInSequence(): string[] {
-        const elements: string[] = [];
-        let currentNode = this._head;
-        elements.push(currentNode.toString());
+    toString(): string {
+        if (this.isEmpty()) return '';
 
-        while (currentNode.next != null) {
+        let objString = this._head.toString();
+        let currentNode = this._head.next;
+
+        for (let i = 1; i < this.getSize() && currentNode != null; i++) {
+            objString = `${objString},${currentNode.toString()}`;
             currentNode = currentNode.next;
-            elements.push(currentNode.toString());
         }
 
-        return elements;
-    }
-
-    print(): void {
-        const elements = this.getElementsInSequence();
-
-        elements.forEach((element, i) => {
-            console.log(`pos: ${i}, elem: ${element}`);
-        });
+        return objString;
     }
 }
 
-const listA = new LinkedList<Number>();
-listA.push(1);
-listA.push(2);
-listA.push(3);
-listA.print();
+// const listA = new LinkedList<Number>();
+// listA.push(1);
+// listA.push(2);
+// listA.push(3);
+// console.log(listA.toString());
